@@ -7,6 +7,7 @@ const produtoControler = require('./controllers/produtoController');
 
 
 router.get('/produto', produtoControler.listarTudo);
+router.get('/produto/:id', produtoControler.listarProd);
 router.post('/produto', produtoControler.criarProduto);
 router.delete('/produto/:id', produtoControler.produtoDeletado);
 router.put('/produto/:id', produtoControler.produtoAtualizado);

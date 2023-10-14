@@ -14,6 +14,15 @@ const listarTudo = async (request, response)=>{
      return response.status(200).json(produtos);
 }
 
+const listarProd = async (request, response)=>{
+  const {id} = request.params;
+  const produtos = await produtoModel.listarUm(id);
+
+  return response.status(200).json(produtos);
+}
+
+
+
 const produtoDeletado = async(request, response)=>{
     const {id} = request.params;
   
@@ -32,5 +41,6 @@ module.exports= {
     criarProduto,
     listarTudo,
     produtoDeletado,
-    produtoAtualizado
+    produtoAtualizado,
+    listarProd
 }
